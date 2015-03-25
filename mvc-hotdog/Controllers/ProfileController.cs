@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using mvc_hotdog.Models;
+using System.Net;
 
 namespace mvc_hotdog.Controllers
 {
@@ -11,46 +13,56 @@ namespace mvc_hotdog.Controllers
         // GET: Profile
         public ActionResult Index()
         {
-            return View();
+            ProfileService profiles = new ProfileService();
+            List<Profile> profileList = profiles.getProfiles();
+            return View(profileList);
         }
 
         // GET: Profile/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(string user)
         {
-            return View();
+            ProfileService profiles = new ProfileService();
+            Profile theProfile = profiles.getProfile(user);
+            return View(theProfile);
         }
 
         // GET: Profile/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+        //public ActionResult Create()
+        //{
+        //    Profile newpm = new Profile();
+        //    return View(newpm);
+        //}
 
-        // POST: Profile/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
+        //// POST: Profile/Create
+        //[HttpPost]
+        //public ActionResult Create(FormCollection collection)
+        //{
+        //    try
+        //    {
+        //        // TODO: Add insert logic here
+        //        ProfileService service = new ProfileService();
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        //       // service.addProfile(p);
+
+        //        return RedirectToAction("Index");
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
 
         // GET: Profile/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(string user)
         {
-            return View();
+            ProfileService profiles = new ProfileService();
+            Profile theProfile = profiles.getProfile(user);
+            return View(theProfile);
         }
 
         // POST: Profile/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(string user, FormCollection collection)
         {
             try
             {
@@ -64,26 +76,26 @@ namespace mvc_hotdog.Controllers
             }
         }
 
-        // GET: Profile/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
+        //// GET: Profile/Delete/5
+        //public ActionResult Delete(int id)
+        //{
+        //    return View();
+        //}
 
-        // POST: Profile/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
+        //// POST: Profile/Delete/5
+        //[HttpPost]
+        //public ActionResult Delete(int id, FormCollection collection)
+        //{
+        //    try
+        //    {
+        //        // TODO: Add delete logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        //        return RedirectToAction("Index");
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
     }
 }

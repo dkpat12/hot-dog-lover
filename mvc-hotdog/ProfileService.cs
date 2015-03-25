@@ -3,6 +3,7 @@ using mvc_hotdog.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Net;
 
 
 namespace mvc_hotdog
@@ -62,7 +63,7 @@ namespace mvc_hotdog
                 Username = "dkpat",
                 Name = "Dillion Patt",
                 ProfileBio = "You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man." + System.Environment.NewLine + "Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero. And most times they're friends, like you and me! I should've known way back when... You know why, David? Because of the kids. They called me Mr Glass.",
-                ImageURL = "Pretty Colors",
+                ImageURL = "https://media.licdn.com/mpr/mpr/shrink_200_200/p/7/005/074/144/21229c3.jpg",
                 FavDog = "Half-foot long",
                 Rating = 5,
                 PastDogs = new List<string> { "Orange Dog", "Beef Frank" }
@@ -74,7 +75,7 @@ namespace mvc_hotdog
                 Username = "jsmith",
                 Name = "John Smith",
                 ProfileBio = "You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man." + System.Environment.NewLine + "Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero. And most times they're friends, like you and me! I should've known way back when... You know why, David? Because of the kids. They called me Mr Glass.",
-                ImageURL = "Pretty Colors",
+                ImageURL = "http://i.imgur.com/sgPyAZg.jpg",
                 FavDog = "All Beef",
                 Rating = 1,
                 PastDogs = new List<string> { "All Beef", "Vegan Delight", "Purple People Eater" }
@@ -86,7 +87,7 @@ namespace mvc_hotdog
                 Username = "codeorange",
                 Name = "Elizabeth Frankfurter",
                 ProfileBio = "You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man." + System.Environment.NewLine + "Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero. And most times they're friends, like you and me! I should've known way back when... You know why, David? Because of the kids. They called me Mr Glass.",
-                ImageURL = "Pretty Colors",
+                ImageURL = "http://murderpedia.org/female.W/images/wiese-elisabeth/elisabeth-wiese-1.jpg",
                 FavDog = "Royale Hot",
                 Rating = 3,
                 PastDogs = new List<string> { "Royale Hot", "Beef Frank", "Plebian's Dog" }
