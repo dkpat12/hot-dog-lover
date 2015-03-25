@@ -23,6 +23,9 @@ namespace mvc_hotdog.Controllers
         {
             ProfileService profiles = new ProfileService();
             Profile theProfile = profiles.getProfile(user);
+            if( theProfile.Username == null){
+                return new HttpNotFoundResult("There was no profile!");
+            }
             return View(theProfile);
         }
 

@@ -3,69 +3,40 @@
 @{
     ViewBag.Title = "User Profile";
 }
-
-<h2>User Profile</h2>
-
+<div class="row">
+    <div class="col col-md-12">
+        <h2 class="pull-left">User Profile</h2>
+        <h4 class="pull-right">@Html.ActionLink("Edit Profile", "Edit", new { user = Model.Username })</h4>
+    </div>
+</div>
 <div class="row">
 
     <div class="col-md-3">
         <img src="@Model.ImageURL" class="img-responsive" />
+        <ul>
+            <li>Favorite Dog: @Html.DisplayFor(model => model.FavDog)</li>
+            <li>Rating: @Html.DisplayFor(model => model.Rating)</li>
+        </ul>
     </div>
     <div class="col-md-9">
         <h3>@Html.DisplayFor(model => model.Name)</h3>
+        <hr />
+        <div class="profile-bio">
+            <p>@Html.DisplayFor(model => model.ProfileBio)</p>
+        </div>
+
+        <div class="past-dogs">
+            <h4>My Last Hot Dogs</h4>
+            <ul>
+                 @foreach (var item in (Model.PastDogs))
+                    {
+                        <li>@Html.DisplayFor(model => item) </li>
+                    }
+            </ul>
+        </div>
     </div>
 
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Username)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Username)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ProfileBio)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ProfileBio)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ImageURL)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ImageURL)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FavDog)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FavDog)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Rating)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Rating)
-        </dd>
-
-    </dl>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new {  user = Model.Username }) |
